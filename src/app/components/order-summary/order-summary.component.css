@@ -1,3 +1,13 @@
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --font-family: 'Red Hat Display', sans-serif;
+}
 
 .background {
   position: fixed;
@@ -32,11 +42,11 @@
 .card {
     display: flex;
     flex-direction: column;
-    max-width: 450px;
+    max-width: 350px;
     background-color: #fff;
     border-radius: 20px;
     overflow: hidden;
-    filter: drop-shadow(10px 10px 35px var(--bright-blue));
+    filter: drop-shadow(10px 10px 35px var(--pale-blue));
 
 }
 
@@ -59,6 +69,7 @@ img {
     font-weight: 900;
     font-size: 1.7rem;
     margin-bottom: 0px;
+    color: var(--dark-blue);
 }
 
 .card__body--description {
@@ -66,17 +77,17 @@ img {
     text-align: center;
     line-height: 1.7rem;
     color: var(--desaturated-blue);
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .card__body--subscription {
     display: flex;
-    width: 70%;
-    height: 100%;
+    width: 82%;
+      height: 90%;
     align-items: center;
     background-color: var(--very-pale-blue);
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     padding: 5%;
 }
 
@@ -140,30 +151,19 @@ button {
     background: none;
     font-weight: 900;
     color: var(--desaturated-blue);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 button:hover {
     border: none;
     background: none;
     font-weight: bold;
-    color: var(--dark-blue);
-    margin-bottom: 50px;
     cursor: pointer;
     font-size: 18px;
+    color: #1f2f56;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        align-items: start;
-    }
-  .background {
-    background-image: url("../../../assets/images/pattern-background-mobile.svg");
-  }
-  .card {
-    max-width: 95%;
-  }
-}
+
 
 .modal {
     display: none;
@@ -229,3 +229,21 @@ button:hover {
     font-size: 1.1rem;
     color: var(--desaturated-blue);
  }
+
+@media only screen and (max-width: 600px) {
+  body {
+    align-items: start;
+  }
+
+  .background {
+    background-image: url("../../../assets/images/pattern-background-mobile.svg");
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+}
