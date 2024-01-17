@@ -1,1 +1,71 @@
-Hola Mundo!!
+<a class="view__subscription" (click)="viewCard()" *ngIf="!displayCard"> {{'view subscription' | titlecase }}</a>
+
+
+<div class="background"></div>
+<div class="card" *ngIf="displayCard">
+  <div class="card__header">
+    <div class="card--img">
+        <img src="../assets/images/illustration-hero.svg" alt="">
+    </div>
+  </div>
+  <div class="card__body">
+    <h1 class="card__body--title">
+        Order Summary
+    </h1>
+    <p class="card__body--description"> You can now listen to millions of songs, 
+        audiobooks, and podcasts on any device anywhere you like! 
+    </p>
+    <div class="card__body--subscription">
+        <i><img src="../assets/images/icon-music.svg" alt=""></i>
+        <div class="card__body--sub__plan">
+            <h4 class="card__body--sub__plan--text"> {{ plan }}</h4>
+            <p> {{ price}} </p>
+        </div>
+        <p class="card__body--subscription__link" (click)="openModal()">Change</p>
+    </div>
+    <div class="card__body--payment">
+        Proceed to Payment
+    </div>
+  </div>
+  <div class="card__footer">
+    <button (click)="closeCard()"> Cancel</button>
+  </div>
+</div>
+
+
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <div class="close" (click)="closeModal()" align="end">&times;</div>
+    <h2>Planes de Suscripción</h2>
+    <ul>
+      <li class="select__plan" (click)="setPlan('Monthly Plan', '$9.99/month')">
+          <i><img src="../assets/images/icon-music.svg" alt=""></i>
+          <div class="select--sub__plan">
+              <h4 class="select--sub__plan--text"> Monthly Plan </h4>
+              <p> $9.99/month </p>
+          </div>
+      </li>
+      <li class="select__plan" (click)="setPlan('Familiar Monthly Plan', '$29.99/Monthly')">
+        <i><img src="../assets/images/icon-music.svg" alt=""></i>
+        <div class="select--sub__plan">
+          <h4 class="select--sub__plan--text"> Familiar Monthly Plan</h4>
+          <p> $29.99/month </p>
+        </div>
+      </li>
+      <li class="select__plan" (click)="setPlan('Anual Plan', '$59.99/year')">
+          <i><img src="../assets/images/icon-music.svg" alt=""></i>
+          <div class="select--sub__plan">
+              <h4 class="select--sub__plan--text"> Anual Plan </h4>
+              <p> $59.99/year </p>
+          </div>
+      </li>
+      <li class="select__plan" (click)="setPlan('Familiar Anual Plan', '$99.99/year')">
+          <i><img src="../assets/images/icon-music.svg" alt=""></i>
+          <div class="select--sub__plan">
+              <h4 class="select--sub__plan--text"> Familiar Anual Plan</h4>
+              <p> $99.99/year </p>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>
